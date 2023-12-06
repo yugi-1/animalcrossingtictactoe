@@ -1,6 +1,5 @@
 //data object backend
 let players = [];
-const API_KEY = '3802c382-5fbc-4915-96bb-7decc1d5b0cd';
 
 //title screen
 let gameScreen = document.getElementById('gameContent');
@@ -31,19 +30,17 @@ ptis.onclick = function() {
 }
 
 function fetchVillagers() {
-    // fetch(`https://api.nookipedia.com/villagers`)
-    // .then(response => response.json())
-    // .then(data => console.log(data));
-    fetch("https://api.nookipedia.com/villagers?limit=50", {
+    fetch(`https://api.nookipedia.com/villagers?game=nl&game=cf&game=ww`, {
         method: "GET",
         headers: {
+            "Accept-Version": '1.0.0',
             "X-API-KEY": '3802c382-5fbc-4915-96bb-7decc1d5b0cd',
             "Content-Type": "application/json;charset=utf-8"
         },
         // body: JSON.stringify({
-            
+           
         // })
     })
-        .then((res) => res.json())
-        .then((data) => console.log(data));
+        .then(res => res.json())
+        .then(data => console.log(data));
 }
