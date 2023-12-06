@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#introvid {
+    width:100%; 
+    position: absolute;
+}
+.logo {
+    position: relative;
+    top: 150px;
+    left: 400px;
+    animation: fadeIn 3s;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+  .clickanywhere {
+      position: relative;
+      font-family: 'Wellfleet', monospace;
+      animation: fadeIn 3s;
+      color: #F7CC40;
+      background-color:#736147;
+      width: max-content;
+      padding: 10px;
+      border-radius: 10px;
+      top: 180px;
+      left: 460px;
+  }
+.title {
+        animation: fadeOut 0.5s;
+        opacity: 0;
+}
+#gameContent {
+    display: none;
+}
