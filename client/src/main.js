@@ -37,9 +37,7 @@ function fetchVillagers() {
             "Accept-Version": '1.0.0',
             "X-API-KEY": '3802c382-5fbc-4915-96bb-7decc1d5b0cd',
             "Content-Type": "application/json;charset=utf-8"
-        },
-        // body: JSON.stringify({      
-        // })
+        }
     })
         .then(res => res.json())
         .then(villagers => populateVillager(villagers));  
@@ -77,3 +75,20 @@ function populateVillager(villagers) {
                 });  
             };
 }
+//game setup screen
+let createPOCBt = document.getElementById('createPOC');
+let createPTCBt = document.getElementById('createPTC');
+
+createPOCBt.innerText = `Choose Character [placeholder]`;
+createPOCBt.onclick = function() {
+    createPOCBt.style.display = 'none';
+    createPTCBt.style.display = 'block';
+};
+
+createPTCBt.onclick = function() {
+    let preSpriteSelector = document.getElementById('villagepp');
+    let uiSelectOne = document.getElementById('villageSelectUIO');
+    preSpriteSelector.style.display = 'none';
+    uiSelectOne.style.display = 'none';
+    createPTCBt.style.display = 'none';
+};

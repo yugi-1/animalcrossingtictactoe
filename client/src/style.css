@@ -30,6 +30,13 @@ body {
 @keyframes slide {
     10% { left: 0; }
 }
+@-webkit-keyframes slideOut {
+    100% { left: 0; }
+}
+
+@keyframes slideOut {
+    100% { left: 0; }
+}
 
   .clickanywhere {
       position: relative;
@@ -139,6 +146,7 @@ body {
 #createPOC, #createPTC {
     display: none;
     position: absolute;
-    left: 400px;
-    bottom: 400px;
+    left: 360px;
+    bottom: 350px;
+    width: 200px;
 }
