@@ -49,12 +49,16 @@ function fetchVillagers() {
 
 function populateVillager(villagers) {
       //display villagers
+            let preSpriteSelector = document.getElementById('villagepp');
+            let previewSprite = document.createElement('img');
             let uiPreview = document.getElementById('villageP');
             let uiSelectOne = document.getElementById('villageSelectUIO');
             let infoCreate = document.createElement('p');
             infoCreate.setAttribute('class', 'characterName');
+            previewSprite.setAttribute('class', 'preSprite');
 
             for (let villager of villagers) {
+                //name display
                 let imgCreate = document.createElement('img');
                 imgCreate.setAttribute('class', 'imgclass');
                 imgCreate.setAttribute('id', villager.id);
@@ -65,6 +69,12 @@ function populateVillager(villagers) {
                     infoCreate.style.display = 'block';
                     infoCreate.innerText = villager.name;
                     uiPreview.appendChild(infoCreate);
+    //villager big image
+                    previewSprite.style.display = 'block';
+                    previewSprite.setAttribute('id', villager.id);
+                    previewSprite.src=villager.image_url;
+                    preSpriteSelector.appendChild(previewSprite);
+                    
                 });  
             };
 }

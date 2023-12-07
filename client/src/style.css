@@ -124,7 +124,13 @@ body {
     left: 800px;
     bottom: 500px;
     font-family: 'Wellfleet', monospace;
-
     -webkit-animation: slide 1s forwards;
     animation: slide 0.5s forwards;
+}
+.preSprite {
+    position: absolute;
+    display: none;
+    width: 350px;
+    left: 1000px;
+    bottom: 40px;
 }
