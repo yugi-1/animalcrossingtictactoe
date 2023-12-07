@@ -45,10 +45,9 @@ function fetchVillagers() {
         .then(villagers => populateVillager(villagers));  
 };
 
-
-
 function populateVillager(villagers) {
       //display villagers
+            let chooseBtnOne = document.getElementById('createPOC');
             let preSpriteSelector = document.getElementById('villagepp');
             let previewSprite = document.createElement('img');
             let uiPreview = document.getElementById('villageP');
@@ -74,7 +73,7 @@ function populateVillager(villagers) {
                     previewSprite.setAttribute('id', villager.id);
                     previewSprite.src=villager.image_url;
                     preSpriteSelector.appendChild(previewSprite);
-                    
+                    chooseBtnOne.style.display = 'block';
                 });  
             };
 }

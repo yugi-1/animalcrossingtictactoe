@@ -136,6 +136,9 @@ body {
     -webkit-animation: slide 1s forwards;
     animation: slide 0.5s forwards;
 }
-.charbtns {
+#createPOC, #createPTC {
     display: none;
+    position: absolute;
+    left: 400px;
+    bottom: 400px;
 }
