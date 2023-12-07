@@ -29,10 +29,9 @@ ptis.onclick = function() {
     fetchVillagers();
 }
 
-
 //fetch villagers data
 function fetchVillagers() {
-    fetch(`https://api.nookipedia.com/villagers?game=nl&game=cf&game=ww`, {
+    fetch(`https://api.nookipedia.com/villagers?game=nl&game=cf&game=ww&game=hhd&game=dnm&game=ac&game=pc`, {
         method: "GET",
         headers: {
             "Accept-Version": '1.0.0',
@@ -43,20 +42,16 @@ function fetchVillagers() {
         // })
     })
         .then(res => res.json())
-        .then(villagers => {  //display villager 
-
+        .then(villagers => {
+              //display villagers
+            console.log(villagers);
             let uiSelectOne = document.getElementById('villageSelectUIO');
             let tab = ``;
-            
             for (let v of villagers) {
-                tab += `<img class="imgclass" src="${v.image_url}">`;
+                tab += `<img class="imgclass" src="${v.image_url}" id="characterChoices">`;
             }
             uiSelectOne.innerHTML = tab;
-            // let uiSelectOne = document.getElementById('villageSelectUIO');
-            // uiSelectOne.innerHTML = `<img class="imgclass" src="${villagers[0].image_url}">`;
         });
-
-      
         
 }
 
