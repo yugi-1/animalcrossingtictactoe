@@ -43,13 +43,14 @@ function fetchVillagers() {
         .then(villagers => populateVillager(villagers));  
 };
 
+let preSpriteSelector = document.getElementById('villagepp');
+let uiSelectOne = document.getElementById('villageSelectUIO');
+
 function populateVillager(villagers) {
       //display villagers
             let chooseBtnOne = document.getElementById('createPOC');
-            let preSpriteSelector = document.getElementById('villagepp');
             let previewSprite = document.createElement('img');
             let uiPreview = document.getElementById('villageP');
-            let uiSelectOne = document.getElementById('villageSelectUIO');
             let infoCreate = document.createElement('p');
             infoCreate.setAttribute('class', 'characterName');
             previewSprite.setAttribute('class', 'preSprite');
@@ -80,15 +81,14 @@ let createPOCBt = document.getElementById('createPOC');
 let createPTCBt = document.getElementById('createPTC');
 
 createPOCBt.innerText = `Choose Character [placeholder]`;
-createPOCBt.onclick = function() {
-    createPOCBt.style.display = 'none';
-    createPTCBt.style.display = 'block';
-};
+// createPOCBt.onclick = function() { WIP
+//     createPOCBt.style.display = 'none';
+//     createPTCBt.style.display = 'block';
+// };
 
-createPTCBt.onclick = function() {
-    let preSpriteSelector = document.getElementById('villagepp');
-    let uiSelectOne = document.getElementById('villageSelectUIO');
-    preSpriteSelector.style.display = 'none';
-    uiSelectOne.style.display = 'none';
-    createPTCBt.style.display = 'none';
-};
+// createPTCBt.onclick = function() {  
+//     preSpriteSelector.style.display = 'none';
+//     uiSelectOne.style.display = 'none';
+//     createPTCBt.style.display = 'none';
+// };
+
