@@ -121,7 +121,7 @@ body {
     position: relative;
     font-size: 70px;
     color:  rgb(255, 236, 183);
-    left: 800px;
+    left: 750px;
     bottom: 500px;
     font-family: 'Wellfleet', monospace;
     -webkit-animation: slide 1s forwards;
@@ -130,7 +130,12 @@ body {
 .preSprite {
     position: absolute;
     display: none;
-    width: 350px;
+    width: 325px;
     left: 1000px;
     bottom: 40px;
+    -webkit-animation: slide 1s forwards;
+    animation: slide 0.5s forwards;
+}
+.charbtns {
+    display: none;
 }
