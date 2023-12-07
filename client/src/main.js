@@ -52,14 +52,15 @@ function populateVillager(villagers) {
             let uiPreview = document.getElementById('villageP');
             let uiSelectOne = document.getElementById('villageSelectUIO');
             let infoCreate = document.createElement('p');
-            infoCreate.setAttribute('class', 'test');
+            infoCreate.setAttribute('class', 'characterName');
+
             for (let villager of villagers) {
                 let imgCreate = document.createElement('img');
                 imgCreate.setAttribute('class', 'imgclass');
                 imgCreate.setAttribute('id', villager.id);
                 imgCreate.src=villager.image_url;
                 uiSelectOne.appendChild(imgCreate);
-                
+
                 imgCreate.addEventListener('click', () => {
                     infoCreate.style.display = 'block';
                     infoCreate.innerText = villager.name;
