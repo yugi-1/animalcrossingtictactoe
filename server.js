@@ -2,7 +2,6 @@ const express = require ('express');
 const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
-// const { query } = require('express');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('client'));
@@ -17,7 +16,6 @@ app.post('/api/players', (req, res) => {
     players.push({
         name: req.body.name,
         nameTwo: req.body.nameTwo
-        // character: req.body.character
     });
     res.send(players);
 });

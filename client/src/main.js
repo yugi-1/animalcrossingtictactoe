@@ -23,7 +23,7 @@ pois.onclick = function() {
 
     let pVal = poinp.value;
     createPOCBt.innerText = `Choose your character, ${pVal}!`;
-    
+  
     fetch("/api/players", {
         method: "POST",
         headers: {
@@ -95,18 +95,30 @@ function populateVillager(villagers) {
 
                 imgCreate.addEventListener('click', () => {
                     infoCreate.style.display = 'block';
-                    infoCreate.innerText = villager.name;
+                    infoCreate.innerText = villager.name; //IMPORTANT
                     uiPreview.appendChild(infoCreate);
     
                     previewSprite.style.display = 'block';
-                    previewSprite.setAttribute('id', villager.id);
+                    previewSprite.setAttribute('id', villager.id); //IMPORTANT
                     previewSprite.src=villager.image_url;
                     preSpriteSelector.appendChild(previewSprite);
                     chooseBtnOne.style.display = 'block';
+
+                  
                 });  
+                
             };
 }
 
-createPOCBt.onclick= function() {
-    console.log('works');
+createPOCBt.onclick = function() {
+    createPOCBt.style.display = 'none';
+    createPTCBt.style.display = 'block';
 }
+createPTCBt.onclick = function() {
+    createPTCBt.style.display = 'none';
+    createPOCBt.style.display = 'none';
+    uiSelectOne.style.display = 'none';
+    preSpriteSelector.style.display = 'none';
+}
+
+
