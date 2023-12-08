@@ -107,7 +107,16 @@ function populateVillager(villagers) {
                     createPOCBt.onclick = function() {
                         createPOCBt.style.display = 'none';
                         createPTCBt.style.display = 'block';
-                    
+                        //display playerone main sprite
+                        
+                        let secondSprite = document.createElement('img');
+                        secondSprite.setAttribute('class', 'spriteTwo');
+                        secondSprite.style.display = 'block';
+                        secondSprite.setAttribute('id', villager.id); //IMPORTANT
+                        secondSprite.src=villager.image_url;
+                        mainContain.appendChild(secondSprite);
+
+
                         fetch("/api/players", {
                             method: "POST",
                             headers: {
@@ -120,12 +129,23 @@ function populateVillager(villagers) {
                                 .then((res) => res.json())
                                 .then((data) => console.log(data));
                     };
+                    //display first character on game
+                    let mainContain = document.getElementById('mainGame');
+                  
+
 
                     createPTCBt.onclick = function() {
                         createPTCBt.style.display = 'none';
                         createPOCBt.style.display = 'none';
                         uiSelectOne.style.display = 'none';
                         preSpriteSelector.style.display = 'none';
+
+                        let firstSprite = document.createElement('img');
+                        firstSprite.setAttribute('class', 'spriteOne');
+                        firstSprite.style.display = 'block';
+                        firstSprite.setAttribute('id', villager.id); //IMPORTANT
+                        firstSprite.src=villager.image_url;
+                        mainContain.appendChild(firstSprite);
                     
                         fetch("/api/players", {
                             method: "POST",
