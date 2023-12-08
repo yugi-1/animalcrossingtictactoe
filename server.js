@@ -13,7 +13,6 @@ app.get('/api/players', (req, res) => {
     res.send(players);
 });
 
-//player one
 app.post('/api/players', (req, res) => {
     players.push({
         name: req.body.name,

@@ -12,6 +12,9 @@ let pois = document.getElementById('createPO');
 let ptinp = document.getElementById('usernameInpT');
 let ptis = document.getElementById('createPT');
 
+let createPOCBt = document.getElementById('createPOC');
+let createPTCBt = document.getElementById('createPTC');
+
 pois.onclick = function() {
     poinp.style.display = 'none';
     pois.style.display = 'none';
@@ -19,7 +22,7 @@ pois.onclick = function() {
     ptis.style.display = 'block';
 
     let pVal = poinp.value;
-  
+    createPOCBt.innerText = `Choose your character, ${pVal}!`;
     
     fetch("/api/players", {
         method: "POST",
@@ -37,7 +40,9 @@ pois.onclick = function() {
 ptis.onclick = function() {
     ptinp.style.display = 'none';
     ptis.style.display = 'none';
+
     let pValtwo = ptinp.value;
+    createPTCBt.innerText = `Choose your character, ${pValtwo}!`;
 
     fetch("/api/players", {
         method: "POST",
@@ -92,7 +97,7 @@ function populateVillager(villagers) {
                     infoCreate.style.display = 'block';
                     infoCreate.innerText = villager.name;
                     uiPreview.appendChild(infoCreate);
-    //villager big image
+    
                     previewSprite.style.display = 'block';
                     previewSprite.setAttribute('id', villager.id);
                     previewSprite.src=villager.image_url;
@@ -101,23 +106,7 @@ function populateVillager(villagers) {
                 });  
             };
 }
-//game setup screen
-let createPOCBt = document.getElementById('createPOC');
-let createPTCBt = document.getElementById('createPTC');
 
-// createPOCBt.innerText = `Choose Character ${pVal}`;
-
-// function addUserOne() {
-//     fetch("/api/players", {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json;charset=utf-8",
-//         },
-//         body: JSON.stringify({
-//             name: pVal,
-//             // character: inputValTwo
-//         })
-//     })
-//         .then((res) => res.json())
-//         .then((data) => console.log(data));
-// }
+createPOCBt.onclick= function() {
+    console.log('works');
+}
