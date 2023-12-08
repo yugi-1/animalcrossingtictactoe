@@ -104,21 +104,42 @@ function populateVillager(villagers) {
                     preSpriteSelector.appendChild(previewSprite);
                     chooseBtnOne.style.display = 'block';
 
-                  
+                    createPOCBt.onclick = function() {
+                        createPOCBt.style.display = 'none';
+                        createPTCBt.style.display = 'block';
+                    
+                        fetch("/api/players", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json;charset=utf-8",
+                            },
+                            body: JSON.stringify({
+                                characterOne: villager.id
+                                })
+                            })
+                                .then((res) => res.json())
+                                .then((data) => console.log(data));
+                    };
+
+                    createPTCBt.onclick = function() {
+                        createPTCBt.style.display = 'none';
+                        createPOCBt.style.display = 'none';
+                        uiSelectOne.style.display = 'none';
+                        preSpriteSelector.style.display = 'none';
+                    
+                        fetch("/api/players", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json;charset=utf-8",
+                            },
+                            body: JSON.stringify({
+                                characterTwo: villager.id
+                                })
+                            })
+                                .then((res) => res.json())
+                                .then((data) => console.log(data));
+                    };
                 });  
-                
             };
 }
-
-createPOCBt.onclick = function() {
-    createPOCBt.style.display = 'none';
-    createPTCBt.style.display = 'block';
-}
-createPTCBt.onclick = function() {
-    createPTCBt.style.display = 'none';
-    createPOCBt.style.display = 'none';
-    uiSelectOne.style.display = 'none';
-    preSpriteSelector.style.display = 'none';
-}
-
 

@@ -15,7 +15,9 @@ app.get('/api/players', (req, res) => {
 app.post('/api/players', (req, res) => {
     players.push({
         name: req.body.name,
-        nameTwo: req.body.nameTwo
+        nameTwo: req.body.nameTwo,
+        characterOne: req.body.characterOne,
+        characterTwo: req.body.characterTwo
     });
     res.send(players);
 });
