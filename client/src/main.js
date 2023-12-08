@@ -1,6 +1,3 @@
-//data object backend
-let players = [];
-
 //title screen
 let gameScreen = document.getElementById('gameContent');
 let title = document.getElementById('containerTitle');
@@ -20,12 +17,28 @@ pois.onclick = function() {
     pois.style.display = 'none';
     ptinp.style.display = 'block';
     ptis.style.display = 'block';
-      //insert backend code here to push usernames to data
+
+    let pVal = poinp.value;
+
+    fetch("/api/players", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify({
+            name: pVal
+            })
+        })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
 }
 
 ptis.onclick = function() {
     ptinp.style.display = 'none';
     ptis.style.display = 'none';
+
+    let pValtwo = ptinp.value;
+
     fetchVillagers();
 }
 
@@ -80,15 +93,19 @@ function populateVillager(villagers) {
 let createPOCBt = document.getElementById('createPOC');
 let createPTCBt = document.getElementById('createPTC');
 
-createPOCBt.innerText = `Choose Character [placeholder]`;
-// createPOCBt.onclick = function() { WIP
-//     createPOCBt.style.display = 'none';
-//     createPTCBt.style.display = 'block';
-// };
+// createPOCBt.innerText = `Choose Character ${pVal}`;
 
-// createPTCBt.onclick = function() {  
-//     preSpriteSelector.style.display = 'none';
-//     uiSelectOne.style.display = 'none';
-//     createPTCBt.style.display = 'none';
-// };
-
+// function addUserOne() {
+//     fetch("/api/players", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json;charset=utf-8",
+//         },
+//         body: JSON.stringify({
+//             name: pVal,
+//             // character: inputValTwo
+//         })
+//     })
+//         .then((res) => res.json())
+//         .then((data) => console.log(data));
+// }
