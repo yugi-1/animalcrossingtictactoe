@@ -13,10 +13,11 @@ app.get('/api/players', (req, res) => {
     res.send(players);
 });
 
+//player one
 app.post('/api/players', (req, res) => {
     players.push({
-        
-        name: req.body.name
+        name: req.body.name,
+        nameTwo: req.body.nameTwo
         // character: req.body.character
     });
     res.send(players);

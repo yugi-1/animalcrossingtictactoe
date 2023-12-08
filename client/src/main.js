@@ -19,7 +19,8 @@ pois.onclick = function() {
     ptis.style.display = 'block';
 
     let pVal = poinp.value;
-
+  
+    
     fetch("/api/players", {
         method: "POST",
         headers: {
@@ -36,9 +37,20 @@ pois.onclick = function() {
 ptis.onclick = function() {
     ptinp.style.display = 'none';
     ptis.style.display = 'none';
-
     let pValtwo = ptinp.value;
 
+    fetch("/api/players", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify({
+            nameTwo: pValtwo
+            })
+        })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+            
     fetchVillagers();
 }
 
