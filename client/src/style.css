@@ -161,3 +161,18 @@ body {
     bottom: 50px;
     display: none;
 }
+.mainUsernames {
+    font-size: 50px;
+    font-family: 'Wellfleet', monospace;
+    color: #F7CC40;
+    background-color: saddlebrown;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0px 20px 0px 20px;
+}
+.mainUserDisplay {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    bottom: 500px;
+}

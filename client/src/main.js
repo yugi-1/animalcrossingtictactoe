@@ -76,6 +76,8 @@ function fetchVillagers() {
 let preSpriteSelector = document.getElementById('villagepp');
 let uiSelectOne = document.getElementById('villageSelectUIO');
 
+let disUser = document.getElementById('mainUser');
+
 function populateVillager(villagers) {
       //display villagers
             let chooseBtnOne = document.getElementById('createPOC');
@@ -108,7 +110,7 @@ function populateVillager(villagers) {
                         createPOCBt.style.display = 'none';
                         createPTCBt.style.display = 'block';
                         //display playerone main sprite
-                        
+
                         let secondSprite = document.createElement('img');
                         secondSprite.setAttribute('class', 'spriteTwo');
                         secondSprite.style.display = 'block';
@@ -131,8 +133,6 @@ function populateVillager(villagers) {
                     };
                     //display first character on game
                     let mainContain = document.getElementById('mainGame');
-                  
-
 
                     createPTCBt.onclick = function() {
                         createPTCBt.style.display = 'none';
@@ -146,6 +146,19 @@ function populateVillager(villagers) {
                         firstSprite.setAttribute('id', villager.id); //IMPORTANT
                         firstSprite.src=villager.image_url;
                         mainContain.appendChild(firstSprite);
+                        //display main usernames
+                        let pValtwo = ptinp.value;
+                        let pVal = poinp.value;
+                        
+                        let thisUsername = document.createElement('h3');
+                        thisUsername.setAttribute('class', 'mainUsernames');
+                        thisUsername.innerText = pVal;
+                        disUser.appendChild(thisUsername);
+
+                        let thisUsernametwo = document.createElement('h3');
+                        thisUsernametwo.setAttribute('class', 'mainUsernames');
+                        thisUsernametwo.innerText = pValtwo;
+                        disUser.appendChild(thisUsernametwo);
                     
                         fetch("/api/players", {
                             method: "POST",
