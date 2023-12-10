@@ -211,6 +211,8 @@ body {
 #g1, #g2, #g3, #g4, #g5, #g6, #g7, #g8, #g9{ 
     border: 10px dotted rgb(255, 209, 81);
     border-radius: 15px;
+    color: rgb(255, 209, 81);
+    font-size: 50px;
 } 
 
 .ui { 
