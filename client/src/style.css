@@ -174,5 +174,64 @@ body {
     position: relative;
     display: flex;
     justify-content: space-between;
-    bottom: 500px;
+    bottom: 750px;
+}
+#gameMenu {
+    position: relative;
+    bottom: 800px;
+    left: 80px;
+    display: none;
+}
+#theGame {
+    position: relative;
+    display: none;
+    bottom: 800px;
+
+}
+
+.rowOne { 
+    display: flex; 
+} 
+.cell { 
+    border: none; 
+    width: 150px; 
+    height: 150px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 24px; 
+    text-align: center; 
+    cursor: pointer;
+    background-color:#736147;
+    margin: 5px;
+}   
+.cell:active { 
+    outline: none; 
+} 
+#g1, #g2, #g3, #g4, #g5, #g6, #g7, #g8, #g9{ 
+    border: 10px dotted rgb(255, 209, 81);
+    border-radius: 15px;
+} 
+
+.ui { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+ 
+} 
+#start {
+    font-family: 'Wellfleet', monospace;
+    color: #F7CC40;
+    background-color:#736147;
+    font-size: 20px;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+}
+.text {
+    font-family: 'Wellfleet', monospace;
+    color: #F7CC40;
+    background-color:#736147;
+    padding: 5px;
+    border-radius: 10px;
 }

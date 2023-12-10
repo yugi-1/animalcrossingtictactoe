@@ -6,6 +6,13 @@ title.onclick = function startGame() {
     gameScreen.style.display = 'block';
 }
 
+let edit = document.getElementById('EditBtn');
+
+edit.onclick = function edit() {
+    console.log('edt works');
+    gameScreen.style.display = 'block';
+}
+
 //playerone input screen 
 let poinp = document.getElementById('usernameInp');
 let pois = document.getElementById('createPO');
@@ -77,7 +84,7 @@ let preSpriteSelector = document.getElementById('villagepp');
 let uiSelectOne = document.getElementById('villageSelectUIO');
 
 let disUser = document.getElementById('mainUser');
-
+let menuAppear = document.getElementById('gameMenu');
 function populateVillager(villagers) {
       //display villagers
             let chooseBtnOne = document.getElementById('createPOC');
@@ -133,7 +140,7 @@ function populateVillager(villagers) {
                     };
                     //display first character on game
                     let mainContain = document.getElementById('mainGame');
-
+                   
                     createPTCBt.onclick = function() {
                         createPTCBt.style.display = 'none';
                         createPOCBt.style.display = 'none';
@@ -159,7 +166,9 @@ function populateVillager(villagers) {
                         thisUsernametwo.setAttribute('class', 'mainUsernames');
                         thisUsernametwo.innerText = pValtwo;
                         disUser.appendChild(thisUsernametwo);
-                    
+                
+                        menuAppear.style.display = 'block';
+
                         fetch("/api/players", {
                             method: "POST",
                             headers: {
@@ -176,3 +185,9 @@ function populateVillager(villagers) {
             };
 }
 
+let gameBoard = document.getElementById('theGame');
+let play = document.getElementById('playBtn');
+play.onclick = function tictactoe() {
+    menuAppear.style.display = 'none';
+    gameBoard.style.display = 'block';
+}

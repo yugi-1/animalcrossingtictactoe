@@ -41,9 +41,25 @@
 
         <div class="mainGameScreen" id="mainGame"></div>
         <div class="mainUserDisplay" id="mainUser"></div>
-        <div class="menu" id="gameMenu"></div>
+
+        
 </div>
 
+<div class="menu" id="gameMenu">
+    <select name="difficulties" id="levels">
+        <option value="60 per turn">60s per turn E</option>
+        <option value="30 per turn">30s per turn N</option>
+        <option value="10 per turn">10s per turn H</option>
+      </select>
+
+      <select name="numberRounds" id="rounds">
+        <option value="3 Rounds">3 Rounds</option>
+        <option value="2 Rounds">2 Rounds</option>
+        <option value="1 Round">1 Round</option>
+      </select>
+      <button type="submit" class="mainBtn" id="EditBtn">Edit Players and Characters</button>
+        <button type="submit" class="mainBtn" id="playBtn">Play!</button>
+</div>
 
 <div id="containerTitle">
     <video autoplay muted loop id="introvid" >
@@ -51,6 +67,64 @@
     </video>
     <img src="./media/aclogo.png" class="logo" width="600">
     <h1 class="clickanywhere">Click Anywhere to Begin!</h1>
+</div>
+
+
+
+<div class="gameboard" id="theGame">
+    <div class = "ui"> 
+    <p id="start"> 
+        Game starts by just Tap on box
+    </p> 
+      
+      <span class="text">
+        First Player starts as
+        Player X 
+    </span> 
+    <span class="text">
+        Second Player as 
+          Player 0
+    </span> 
+
+      <div class="rowOne"> 
+        <input type="text" id= "g1" 
+               class="cell" onclick="myfunc_3(); myfunc();" 
+               readonly> 
+        <input type="text" id= "g2" 
+               class="cell" onclick="myfunc_4(); myfunc();" 
+               readonly> 
+        <input type="text" id= "g3" class="cell" 
+               onclick="myfunc_5(); myfunc();" 
+               readonly> 
+    </div> 
+    <div class="rowOne"> 
+        <input type="text" id= "g4" 
+               class="cell" onclick="myfunc_6(); myfunc();" 
+               readonly> 
+        <input type="text" id= "g5" 
+               class="cell" onclick="myfunc_7(); myfunc();" 
+               readonly> 
+        <input type="text" id= "g6" 
+               class="cell" onclick="myfunc_8(); myfunc();" 
+               readonly> 
+    </div> 
+    <div class="rowOne"> 
+        <input type="text" id= "g7" 
+               class="cell" onclick="myfunc_9(); myfunc();" 
+               readonly> 
+        <input type="text" id= "g8" 
+               class="cell" onclick="myfunc_10();myfunc();" 
+               readonly> 
+        <input type="text" id= "g9" 
+               class="cell" onclick="myfunc_11();myfunc();" 
+               readonly> 
+    </div> 
+
+    <!-- <button id="but" onclick="myfunc_2()"> 
+        RESET 
+    </button> -->
+    <button type="submit" class="mainBtn" id="PAUSE">PAUSE</button>
+</div>
 </div>
 
 </div>
