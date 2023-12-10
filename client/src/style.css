@@ -230,7 +230,7 @@ body {
     padding: 10px;
     border-radius: 10px;
 }
-.text {
+.text, #print {
     font-family: 'Wellfleet', monospace;
     color: #F7CC40;
     background-color:#736147;
