@@ -1,4 +1,27 @@
 //title screen
+let deleteB = document.getElementById('deleteBtn');
+deleteB.onclick = function() {
+    let pVal = poinp.value;
+    let pValtwo = ptinp.value;
+
+    fetch("/api/players", {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify({
+            name: pVal,
+            nameTwo: pValtwo
+            })
+        })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+            
+            poinp.style.display = 'block';
+            pois.style.display = 'block';
+    
+}
+
 let gameScreen = document.getElementById('gameContent');
 let title = document.getElementById('containerTitle');
 title.onclick = function startGame() {
@@ -6,11 +29,49 @@ title.onclick = function startGame() {
     gameScreen.style.display = 'block';
 }
 
+let mainContain = document.getElementById('mainGame');
 let edit = document.getElementById('EditBtn');
+let menuScreen = document.getElementById('gameMenu');
 
 edit.onclick = function edit() {
     console.log('edt works');
-    gameScreen.style.display = 'block';
+   menuScreen.style.display = 'none';
+   mainContain.style.display = 'none';
+//    uiSelectOne.style.display = 'block';
+poinp.style.display = 'block';
+pois.style.display = 'block';
+
+pois.onclick = function() {
+    // let pVal = poinp.value;
+    // createPOCBt.innerText = `Choose your character, ${pVal}!`;
+    poinp.style.display = 'none';
+    pois.style.display = 'none';
+    ptinp.style.display = 'block';
+    ptis.style.display = 'block';
+} 
+
+ptis.onclick = function() {
+    ptinp.style.display = 'none';
+    ptis.style.display = 'none';
+    let pVal = poinp.value;
+    let pValtwo = ptinp.value;
+    fetch("/api/players", {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify({
+            name: pVal,
+            nameTwo: pValtwo
+            })
+        })
+            .then((res) => res.json())
+            .then((data) => console.log(data));
+            
+           uiSelectOne.style.display = 'block';
+            preSpriteSelector.style.display = 'block'; 
+ 
+    } 
 }
 
 //playerone input screen 
@@ -202,7 +263,18 @@ let g = document.getElementById('g7');
 let h = document.getElementById('g8');
 let i = document.getElementById('g9');
 
-
+let resetBtn = document.getElementById('resetG'); //WORK IN PROGRESS
+resetBtn.onclick = function myfunc_2() {  
+    a.value = '';
+    b.value = '';
+    c.value = '';
+    d.value = '';
+    e.value = '';
+    f.value = '';
+    g.value = '';
+    h.value = '';
+    i.value = '';
+} 
 
 let flag = 1; 
 a.onclick = function myfunc_3() { 
@@ -598,3 +670,4 @@ function mfunc() {
         } 
     } 
 }
+

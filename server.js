@@ -23,14 +23,13 @@ app.post('/api/players', (req, res) => {
 });
 
 app.put('/api/players', (req, res) => {
-    // todos[Number(req.body.index)].name = req.body.name;
-    // todos[Number(req.body.index)].date = req.body.date;
-    // todos[Number(req.body.index)].category = req.body.category;
-   
-    res.send(players);
+        players[0].name = req.body.name;
+        players[1].nameTwo = req.body.nameTwo;
+        res.send(players);
 });
 
 app.delete('/api/players', (req, res) => {
+    players.shift();
     res.send(players);
 });
 
